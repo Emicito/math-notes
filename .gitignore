@@ -1,0 +1,14 @@
+# Archivos auxiliares LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Archivos temporales
+*.synctex
+*.synctex.gz
