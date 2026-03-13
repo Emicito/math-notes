@@ -1,0 +1,61 @@
+\chapter{Introducción a las funciones}
+
+\section{Definición de función}
+
+Una función es una relación entre dos conjuntos de elementos, en donde cada
+elemento del primer conjunto se relaciona con uno y solo un elemento del
+segundo conjunto.
+
+\begin{definition}
+    Una función de un conjunto D en otro conjunto C es una correspondencia que asigna a cada valor de D exactamente uno en C.
+\end{definition}
+
+\begin{center}
+    \begin{tikzpicture}[>=Stealth]
+        % Conjunto D
+        \node (a) at (0,2) {$a$};
+        \node (b) at (0,1) {$b$};
+        \node (c) at (0,0) {$c$};
+        \node (d) at (0,-1) {$d$};
+        \node (e) at (0,-2) {$e$};
+
+        % Conjunto C
+        \node (n4) at (5,1.5) {$4$};
+        \node (n5) at (5,0.5) {$5$};
+        \node (n6) at (5,-0.5) {$6$};
+        \node (n7) at (5,-1.5) {$7$};
+
+        % Etiquetas de conjuntos
+        \node at (0,3) {$D$};
+        \node at (5,2.5) {$C$};
+
+        % Óvalos de los conjuntos
+        \draw (0,0) ellipse (1.2 and 2.6);
+        \draw (5,0) ellipse (1.2 and 2.1);
+
+        % Flechas (función)
+        \draw[->] (a) -- (n6);
+        \draw[->] (b) -- (n5);
+        \draw[->] (c) -- (n5);
+        \draw[->] (e) -- (n7);
+    \end{tikzpicture}
+\end{center}
+
+\begin{align*}
+    f : D \rightarrow C
+\end{align*}
+
+\begin{gather*}
+    D \rightarrow \text{Dominio de } f \quad Dom(f) \\
+    C \rightarrow \text{Contradominio de } f \quad Codom(f) \\
+    \text{Rango o imagen de } f \quad Im(f) := {f(x) | x \in Dom(f)}
+\end{gather*}
+
+El rango o imagen son todos los valores que la funcion llega a tomar en el co-dominio, ya que pueden existir elementos del co-dominio que la funcion no tome, por lo tanto no formarian parte del rango o imagen.
+
+Si tenemos otra función \(g\), esta función será igual a la función \(f\) si:
+
+\begin{gather*}
+    f = g \iff f(x) = g(x) \\
+    \forall x \in D
+\end{gather*}

@@ -1,0 +1,55 @@
+\documentclass[a4paper,12pt, titlepage]{report}
+% permite escribir directamente caracteres acentuados y símbolos del español.
+\usepackage[utf8]{inputenc}
+% adapta el idioma (títulos, fechas, particiones) al español.
+\usepackage[spanish]{babel}
+% entornos matemáticos avanzados (align, cases, etc.).
+\usepackage{amsmath}
+% Permite personalizar completamente listas (itemize, enumerate, description)
+\usepackage{enumitem}
+% símbolos lógicos y matemáticos adicionales.
+\usepackage{amssymb}
+% definición formal de teoremas, definiciones, proposiciones y demostraciones.
+\usepackage{amsthm}
+% Permite tachar o cancelar términos en expresiones matemáticas
+\usepackage{cancel}
+% Permite crear gráficos vectoriales directamente en LaTeX.
+\usepackage{tikz}
+% Permite crear bloques de texto con marco.
+\usepackage{framed}
+% Permite controlar márgenes sin configuraciones manuales complejas.
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{babel}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}
+
+% espacio entre parrafos 
+\setlength{\parskip}{0.5em}
+
+\begin{document}
+
+\author{Emicito}
+\title{Funciones}
+\date{\Today}
+
+\maketitle
+\tableofcontents
+
+\include{TeX_files/chapter01}
+\include{TeX_files/chapter02}
+\include{TeX_files/chapter03}
+\include{TeX_files/chapter04}
+\include{TeX_files/chapter05}
+\include{TeX_files/chapter06}
+\include{TeX_files/chapter07}
+\include{TeX_files/chapter08}
+\include{TeX_files/chapter09}
+\include{TeX_files/chapter10}
+
+% bibliography, glossary and index would go here.
+
+\end{document}
