@@ -12,3 +12,5 @@
 # Archivos temporales
 *.synctex
 *.synctex.gz
+
+settings.json

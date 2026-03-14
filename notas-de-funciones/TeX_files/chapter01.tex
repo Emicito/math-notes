@@ -51,7 +51,7 @@ segundo conjunto.
     \text{Rango o imagen de } f \quad Im(f) := {f(x) | x \in Dom(f)}
 \end{gather*}
 
-El rango o imagen son todos los valores que la funcion llega a tomar en el co-dominio, ya que pueden existir elementos del co-dominio que la funcion no tome, por lo tanto no formarian parte del rango o imagen.
+El rango o imagen son todos los valores que la función llega a tomar en el co-dominio, ya que pueden existir elementos del co-dominio que la función no tome, por lo tanto no formarían parte del rango o imagen.
 
 Si tenemos otra función \(g\), esta función será igual a la función \(f\) si:
 
@@ -59,3 +59,115 @@ Si tenemos otra función \(g\), esta función será igual a la función \(f\) si
     f = g \iff f(x) = g(x) \\
     \forall x \in D
 \end{gather*}
+
+\section{Ejemplo 1}
+
+Hallar:
+
+\begin{enumerate}
+    \item \(Dom(g)\)
+    \item \(g(5), g(-2), g(-a), -g(a)\)
+\end{enumerate}
+
+Si: \( \displaystyle g(x) = \frac{\sqrt{4 + x}}{1 + x} \)
+
+Sol. 
+
+Podemos notar que: \( \displaystyle -1 \notin Dom(g) \) 
+debido a que si evaluamos en ese valor, el denominador de la función es igual a \(0\).
+
+En el numerador podemos notar que, al ser una raíz cuadrada, el termino de adentro no puede ser negativo, eso implica lo siguiente: 
+
+\begin{gather*}
+    4 + x \geq 0 \quad \therefore \quad x \geq -4 
+\end{gather*}
+
+Con eso obtenemos nuestra primera respuesta:
+\[
+\operatorname{Dom}(g) = [-4,\infty) \setminus \{-1\}
+\]
+
+Para resolver el segundo punto simplemente operamos: 
+
+\begin{displaymath}
+    g(5) = \frac{\sqrt{4+5}}{1+5} = \frac{\sqrt{9}}{6} = \frac{3}{6} = \frac{1}{2}
+\end{displaymath}
+
+\begin{displaymath}
+    g(-2) = \frac{\sqrt{4-2}}{1-2} = \frac{\sqrt{2}}{-1} = - \sqrt{2}
+\end{displaymath}
+
+\begin{displaymath}
+    \text{para } a \in (-\infty,4] \setminus \{-1\} = g(-a) = \frac{\sqrt{4+(-a)}}{1-a} 
+\end{displaymath}
+
+\begin{displaymath}
+    \text{para } a \in \operatorname{Dom}(g) = -1 \cdot g(a) = -1 \left( \frac{\sqrt{4+a}}{1+a} \right)  
+\end{displaymath}
+
+\section{La gráfica de una función}
+
+\begin{definition}
+    El eje \(y\) de la gráfica de una función \(f\) es:
+    \[y = f(x), \forall x \in \operatorname{Dom}(f)\]
+\end{definition}
+
+La gráfica de una función se caracteriza por que cada valor de \(y\) intercepta la gráfica en un solo punto de \(x\), por lo tanto no existen dos puntos en un mismo valor de \(x\).
+
+\section{Ejemplo 2}
+
+Vamos a graficar algunos puntos de la siguiente función para ver su forma:
+
+\begin{displaymath}
+    f(x) := \sqrt{x-1}
+\end{displaymath}
+
+Sol. 
+
+Empezamos por identificar el dominio de la función, en este caso es sencillo identificarlo, ya que el único punto donde la función no tiene sentido es cuando \(x \leq 1\), por lo tanto el intervalo de la función es:
+
+\begin{displaymath}
+    \operatorname{Dom}(f) = [1,\infty)
+\end{displaymath}
+
+Con esto hecho solo queda graficar algunos puntos, en este caso vamos a hacer \(f(1),f(2), \\ f(3),f(4),f(5)\)
+
+\noindent
+\begin{minipage}[t]{0.54\textwidth}
+    \vspace{0pt}
+    \begin{itemize}
+        \item \makebox[3.5cm][l]{\(f(1) = 0\)} \hspace{0.8em} \((1,0)\)
+        \item \makebox[3.5cm][l]{\(f(2) = 1\)} \hspace{0.8em} \((2,1)\)
+        \item \makebox[3.5cm][l]{\(f(3) = \sqrt{2}\)} \hspace{0.8em} \((3,\sqrt{2})\)
+        \item \makebox[3.5cm][l]{\(f(4) = \sqrt{3}\)} \hspace{0.8em} \((4,\sqrt{3})\)
+        \item \makebox[3.5cm][l]{\(f(5) = 2\)} \hspace{0.8em} \((5,2)\)
+    \end{itemize}
+\end{minipage}
+\hspace{0\textwidth}
+\begin{minipage}[t]{0.44\textwidth}
+    \vspace{0pt}
+    \centering
+    \begin{tikzpicture}[scale=0.78]
+        % Ejes
+        \draw[->] (0,0) -- (6.5,0) node[right] {$x$};
+        \draw[->] (0,0) -- (0,3.5) node[above] {$y$};
+
+        % Marcas en eje x
+        \foreach \x in {1,...,6}
+            \draw (\x,0) -- (\x,-0.1) node[below] {\x};
+
+        % Marcas en eje y
+        \foreach \y in {1,2,3}
+            \draw (0,\y) -- (-0.1,\y) node[left] {\y};
+
+        % Curva de la función
+        \draw[thick, domain=1:5, samples=120] plot (\x,{sqrt(\x-1)});
+
+        % Puntos
+        \fill (1,0) circle (2pt);
+        \fill (2,1) circle (2pt);
+        \fill (3,{sqrt(2)}) circle (2pt);
+        \fill (4,{sqrt(3)}) circle (2pt);
+        \fill (5,2) circle (2pt);
+    \end{tikzpicture}
+\end{minipage}
